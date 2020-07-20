@@ -65,4 +65,5 @@ magazine.prototype.constructor=magazine;
 const mag=new magazine('c++','piyush',2016,'jan');
 console.log(mag.getsum());
 console.log(mag);
+console.log(book);
 
