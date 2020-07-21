@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax 1 - text file</title>
+</head>
+<body>
+    <button id="button">get text files</button>
+    <br><br>
+    <div id="text"></div>
+     <script>
+
+        document.getElementById('button').addEventListener
+        ('click',loadtext => {
+         //create xhr object
+            var xhr=new XMLHttpRequest();
+        // open function
+          xhr.open('GET','sample.txt',true);
+          
+          console.log('readystate',xhr.readyState);
+           xhr.onload=function()
+          {
+              if(this.status == 200)
+              {
+                document.getElementById('text').innerHTML=this.responseText;            
+                    console.log(this.responseText);
+              }
+          } 
+       /*    xhr.onreadystatechange=function()
+          {
+              console.log('readystate',this.readyState);
+             if(this.status== 4 && this.status==200)
+             {
+               console.log(this.responseText);
+               document.getElementById('text').innerHTML=this.responseText;
+             } 
+          } */
+          // send request
+          xhr.send();
+        });
+     </script>
+</body>
+</html>

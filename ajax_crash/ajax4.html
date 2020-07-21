@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax4 -n php proces</title>
+</head>
+<body>
+    <button id="button">get name</button>
+    <form action="get" action='process.php'>
+        <input type="text" name="name" id="simple">
+        <input type="submit" value="sumit">
+    </form>
+    <h1>ajax </h1>
+    <form action="get" action='process.php' id=simple>
+        <input type="text" name="name" id="ajax1">
+        <input type="submit" value="sumit">
+    </form>
+   <script>
+  
+       
+       document.getElementById("simple").addEventListener("submit",openname);
+       document.getElementById('button').addEventListener('click',openname); 
+       function openname(e)
+       { 
+           e.preventDefault();
+           var shr=new XMLHttpRequest();
+           name=document.getElementById('ajax1').value;
+           shr.open('GET','process.php?name=saura',true);
+           console.log(shr.readyState);
+           shr.onload=function()
+           {
+               if(this.status==200)
+               {
+                   console.log(this.responseText);
+               }
+           }
+           shr.send();
+       }
+   </script>
+</body>
+</html>
