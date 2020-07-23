@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pdf viewer</title>
+      <link rel="stylesheet" href="style.css">  
+      <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.css">
+    <link rel="stylesheet" href="/fetch_api/style/css/bootstrap.min.css">
+</head>
+<body onresize="my()">
+
+    <h1 class='intro'>PDF Viewer</h1>
+    <div class="top-bar">
+        <button class="btn" id="prev-page">
+            <i class="fas fa-arrow-circle-left"></i>
+            prev page
+        </button>
+        
+        <button class="btn" id="next-page" style="float: right;">
+           next page
+            <i class="fas fa-arrow-circle-right"></i>
+        
+        </button>
+        <span id="page_info">
+            page <span id="page_no"></span>
+            of <span id="page_count"></span>
+        </span>
+    </div>
+    
+    <canvas id="pdf" class="canvas"></canvas>
+   
+    <div class="bottom-bar">
+        
+    </div>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
